@@ -1,6 +1,7 @@
 package br.com.rsinet.com_TDD.PageObject;
 
 import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
  
@@ -24,6 +25,9 @@ public class CriarConta_Page {
  @FindBy(how = How.NAME, using = "last_nameRegisterPage")
  public WebElement ultimoNome;
  
+ @FindBy(how = How.NAME, using = "phone_numberRegisterPage")
+ public WebElement telefone;
+ 
  @FindBy(how = How.NAME, using = "cityRegisterPage")
  public WebElement cidade;
  
@@ -41,5 +45,9 @@ public class CriarConta_Page {
  
  @FindBy(how = How.ID, using = "register_btnundefined")
  public WebElement botao;
+  
+ @FindBy(how =  How.NAME, using = "countryListboxRegisterPage")
+ public  WebElement pais;
+ 
 
  }

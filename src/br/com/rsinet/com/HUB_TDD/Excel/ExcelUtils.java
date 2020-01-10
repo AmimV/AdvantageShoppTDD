@@ -1,12 +1,7 @@
 package br.com.rsinet.com.HUB_TDD.Excel;
 
-import static org.apache.poi.ss.usermodel.Row.RETURN_BLANK_AS_NULL;
-
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
-
 import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -15,7 +10,6 @@ public class ExcelUtils {
 	private static XSSFSheet ExcelWSheet;
 	private static XSSFWorkbook ExcelWBook;
 	private static XSSFCell Cell;
-	private static XSSFRow Row;
 
 	public static void setExcelFile(String Path, String SheetName) throws Exception {
 
@@ -39,27 +33,24 @@ public class ExcelUtils {
 		}
 	}
 
-	public static void setCellData(String Result) throws Exception {
-
-		int RowNum = 0;
-		int ColNum = 0;
-		
-		try {
-			Row = ExcelWSheet.getRow(RowNum);
-			Cell = Row.getCell(ColNum, RETURN_BLANK_AS_NULL);
-			if (Cell == null) {
-				Cell = Row.createCell(ColNum++);
-				Cell.setCellValue(Result);
-			} else {
-				Cell.setCellValue(Result);
-			}
-
-			FileOutputStream fileOut = new FileOutputStream(Constant.Path_TestData + Constant.File_TestData);
-			ExcelWBook.write(fileOut);
-			fileOut.flush();
-			fileOut.close();
-		} catch (Exception e) {
-			throw (e);
-		}
+//	public static void setCellData(String Result, int RowNum, int ColNum) throws Exception {
+//
+//		try {
+//			Row = ExcelWSheet.getRow(RowNum);
+//			Cell = Row.getCell(ColNum, RETURN_BLANK_AS_NULL);
+//			if (Cell == null) {
+//				Cell = Row.createCell(ColNum);
+//				Cell.setCellValue(Result);
+//			} else {
+//				Cell.setCellValue(Result);
+//			}
+//
+//			FileOutputStream fileOut = new FileOutputStream(Constant.Path_TestData + Constant.File_TestData);
+//			ExcelWBook.write(fileOut);
+//			fileOut.flush();
+//			fileOut.close();
+//		} catch (Exception e) {
+//			throw (e);
+//		}
 	}
-}
+

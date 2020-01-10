@@ -8,4 +8,8 @@ public class Home_Page {
 
 	 @FindBy(how = How.ID, using = "menuUser")
 	  public WebElement Menu;
+	  
+	 @FindBy(how = How.XPATH, using = "/html/body/login-modal/div/div/div[3]/a[2]")
+	 public static WebElement CreateNewAcount;
+	 
 }
