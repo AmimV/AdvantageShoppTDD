@@ -23,25 +23,23 @@ public class ScreenShot {
 		    File file = new File("Screenshots");
 
 		    if(file.exists()){
-		    FileUtils.copyFile(srcfile, new File("target/Print/" + "Screenshot_" + getTimeStamp() + ".png"));
+		    FileUtils.copyFile(srcfile, new File("target/Print/CriaConta/" + "Screenshot_" + getTimeStamp() + ".png"));
 		    }else {
 			    System.out.println("Error");
 		    }
 		}
+		
+		
+		public static void getSSLupa(WebDriver driver) throws Exception {
+			File srcfile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			File file = new File("Screenshots");
+			
+			if(file.exists()){
+				FileUtils.copyFile(srcfile, new File("target/Print/ProdutoLupa" + "Screenshot_" + getTimeStamp() + ".png"));
+			}else {
+				System.out.println("Error");
+			}
+		}
+		
+		
 }
-		
-		
-		
-//	    public static void gerarScreenShot(WebDriver driver) {
-//
-//	        File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-//	        File folder = new File("ScrenShoots");
-//	       
-//	            try {
-//					FileUtils.copyFile(file, new File("target/Print/" + folder  + ".png"));
-//				} catch (IOException e) {
-//					System.out.println(e.getMessage());
-//				}
-//	   
-//	    }
-//}

@@ -33,24 +33,4 @@ public class ExcelUtils {
 		}
 	}
 
-//	public static void setCellData(String Result, int RowNum, int ColNum) throws Exception {
-//
-//		try {
-//			Row = ExcelWSheet.getRow(RowNum);
-//			Cell = Row.getCell(ColNum, RETURN_BLANK_AS_NULL);
-//			if (Cell == null) {
-//				Cell = Row.createCell(ColNum);
-//				Cell.setCellValue(Result);
-//			} else {
-//				Cell.setCellValue(Result);
-//			}
-//
-//			FileOutputStream fileOut = new FileOutputStream(Constant.Path_TestData + Constant.File_TestData);
-//			ExcelWBook.write(fileOut);
-//			fileOut.flush();
-//			fileOut.close();
-//		} catch (Exception e) {
-//			throw (e);
-//		}
-	}
-
+}
