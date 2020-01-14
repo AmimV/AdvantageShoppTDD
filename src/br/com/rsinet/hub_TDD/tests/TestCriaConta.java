@@ -1,7 +1,7 @@
 package br.com.rsinet.HUB_TDD.tests;
 
 import java.util.concurrent.TimeUnit;
-
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -9,7 +9,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-
 import br.com.rsinet.HUB_TDD.Excel.Diretorio;
 import br.com.rsinet.HUB_TDD.Excel.ExcelUtils;
 import br.com.rsinet.HUB_TDD.PageObject.CriarConta_Page;
@@ -19,6 +18,7 @@ import br.com.rsinet.HUB_TDD.ScreenShot.ScreenShot;
 import junit.framework.Assert;
 
 
+@SuppressWarnings("deprecation")
 public class TestCriaConta {
 
 	static ChromeDriver driver = new ChromeDriver();
@@ -30,7 +30,6 @@ public class TestCriaConta {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void CliqueConta() throws Exception {
 
@@ -63,8 +62,19 @@ public class TestCriaConta {
 		page.aceitar.click();
 		page.botao.click();
 
+		try {
+			driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+			driver.findElement(By.id("tabletsTxt"));
+		} catch (Exception e) {
+			System.out.println("Falha");
+		}
+		
 		ScreenShot.getScreenShots(PrintDiretorio.criaConta, driver);
 		Assert.assertEquals("https://www.advantageonlineshopping.com/#/", driver.getCurrentUrl());
+	}
+	@After
+	public void fechar () throws Exception {
+		driver.close();
 	}
 
 }

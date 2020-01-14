@@ -15,10 +15,6 @@ public class PesquisaNaLupa_Page {
 	 public WebElement busca;
 	 
 	 @FindBy(how = How.XPATH, using = "/html/body/header/nav/ul/li[4]/a/div/div[1]/div/div/div/img")
-	 public WebElement buscafecha;
-	  
-	 @FindBy(how = How.CLASS_NAME, using = "AddToCard")
-	 public WebElement check;
-	 
+	 public WebElement buscafecha; 
 	 
 }

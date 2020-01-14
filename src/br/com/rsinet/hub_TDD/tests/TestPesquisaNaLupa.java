@@ -32,21 +32,21 @@ public class TestPesquisaNaLupa {
 	public void PesquisaLupa() throws Exception {
 		ExcelUtils.setExcelFile(Diretorio.Path_TestData + Diretorio.File_TestData, "BuscaLupa");
 		PesquisaNaLupa_Page pesq = PageFactory.initElements(driver, PesquisaNaLupa_Page.class);
-		int linha = 3;
-		int coluna =0;
+		int linha = 0;
+		int coluna =1;
 
 		pesq.lupa.click();
+		
 		try {
 			pesq.busca.sendKeys(ExcelUtils.getCellData(linha++, coluna), Keys.ENTER);
 			pesq.buscafecha.click();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			driver.findElement(By.linkText(ExcelUtils.getCellData(linha++, coluna))).click();
-			ScreenShot.getScreenShots(PrintDiretorio.pesquisaLupa, driver);
-
 		} catch (Exception e) {
-			ScreenShot.getScreenShots(PrintDiretorio.pesquisaLupa, driver);
-			Assert.assertEquals(ExcelUtils.getCellData(linha, coluna), driver.getCurrentUrl());
+			System.out.println("Falha");
 		}
+		ScreenShot.getScreenShots(PrintDiretorio.pesquisaLupa, driver);
+		Assert.assertEquals(ExcelUtils.getCellData(linha, coluna), driver.getCurrentUrl());
 	}
 	@After
 	public void fechar() {
