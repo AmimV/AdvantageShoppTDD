@@ -4,6 +4,9 @@ import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+
+import br.com.rsinet.HUB_TDD.Excel.Diretorio;
+import br.com.rsinet.HUB_TDD.Excel.ExcelUtils;
  
 public class CriarConta_Page {
 	
@@ -49,5 +52,7 @@ public class CriarConta_Page {
  @FindBy(how =  How.NAME, using = "countryListboxRegisterPage")
  public  WebElement pais;
  
+
+
 
  }
