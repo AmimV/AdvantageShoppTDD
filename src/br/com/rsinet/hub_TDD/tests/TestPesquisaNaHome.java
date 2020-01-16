@@ -4,24 +4,30 @@ package br.com.rsinet.HUB_TDD.tests;
 import java.util.concurrent.TimeUnit;
 
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+
 import br.com.rsinet.HUB_TDD.Excel.Diretorio;
 import br.com.rsinet.HUB_TDD.Excel.ExcelUtils;
-import br.com.rsinet.HUB_TDD.PageObject.PesquisaNaHome_Page;
+import br.com.rsinet.HUB_TDD.PageFactory.PesquisaNaHome_Page;
 import br.com.rsinet.HUB_TDD.ScreenShot.PrintDiretorio;
 import br.com.rsinet.HUB_TDD.ScreenShot.ScreenShot;
-import junit.framework.Assert;
 
 
-@SuppressWarnings("deprecation")
+
 public class TestPesquisaNaHome {
 
+	ExtentReports extent;
+	ExtentTest logger;
 	static ChromeDriver driver = new ChromeDriver();
 
 	@BeforeMethod
@@ -32,26 +38,27 @@ public class TestPesquisaNaHome {
 	}
 
 	@Test(priority =0)
-	public void PesquisaLupa() throws Exception {
+	public void PesquisaHome() throws Exception {
 		ExcelUtils.setExcelFile(Diretorio.Path_TestData + Diretorio.File_TestData, "BuscaHome");
 		PesquisaNaHome_Page pesq = PageFactory.initElements(driver, PesquisaNaHome_Page.class);
 		
-		pesq.tablet.click();
-
+		pesq.tablet();
+			
+		//Esperar 5 segundos para achar um elemento que está na home para tirar a ScreenShot.
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);	
-			driver.findElement(By.linkText(ExcelUtils.getCellData(0, 0))).click();
+			driver.findElement(By.partialLinkText(ExcelUtils.getCellData(0, 0))).click();
 	
 		ScreenShot.getScreenShots(PrintDiretorio.pesquisaHome, driver);
-		     Assert.assertEquals(ExcelUtils.getCellData(1, 0), driver.getCurrentUrl());
+		     Assert.assertEquals("https://www.advantageonlineshopping.com/#/product/18", driver.getCurrentUrl());
 	}
 	
 	@Test(priority =1)
-	public void PesquisaLupaFalha() throws Exception {
+	public void PesquisaHomeFalha() throws Exception {
 		ExcelUtils.setExcelFile(Diretorio.Path_TestData + Diretorio.File_TestData, "BuscaHome");
 		PesquisaNaHome_Page pesq = PageFactory.initElements(driver, PesquisaNaHome_Page.class);
 		
-		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-		pesq.tablet.click();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		pesq.tablet();
 		
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);	
 		try {
@@ -60,7 +67,7 @@ public class TestPesquisaNaHome {
 			
 			ScreenShot.getScreenShots(PrintDiretorio.pesquisaHome, driver);
 		}
-		Assert.assertEquals(ExcelUtils.getCellData(1, 1), driver.getCurrentUrl());
+		Assert.assertEquals("https://www.advantageonlineshopping.com/#/category/Tablets/3", driver.getCurrentUrl());
 	}
 	
 	@AfterTest
