@@ -2,32 +2,36 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17936" started-at="2020-01-16T22:09:08 GMT-03:00" finished-at="2020-01-16T22:09:26 GMT-03:00">
+  <suite name="Default suite" duration-ms="24987" started-at="2020-01-17T12:42:34 GMT-03:00" finished-at="2020-01-17T12:42:59 GMT-03:00">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="17936" started-at="2020-01-16T22:09:08 GMT-03:00" finished-at="2020-01-16T22:09:26 GMT-03:00">
-      <class name="br.com.rsinet.HUB_TDD.tests.TestCriaConta">
-        <test-method status="PASS" signature="url()[pri:0, instance:br.com.rsinet.HUB_TDD.tests.TestCriaConta@1033576a]" name="url" is-config="true" duration-ms="5349" started-at="2020-01-16T22:09:08 GMT-03:00" finished-at="2020-01-16T22:09:13 GMT-03:00">
+    <test name="Default test" duration-ms="24987" started-at="2020-01-17T12:42:34 GMT-03:00" finished-at="2020-01-17T12:42:59 GMT-03:00">
+      <class name="br.com.rsinet.HUB_TDD.tests.TestPesquisaNaLupa">
+        <test-method status="PASS" signature="url()[pri:0, instance:br.com.rsinet.HUB_TDD.tests.TestPesquisaNaLupa@1e6d1014]" name="url" is-config="true" duration-ms="11075" started-at="2020-01-17T12:42:34 GMT-03:00" finished-at="2020-01-17T12:42:45 GMT-03:00">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- url -->
-        <test-method status="PASS" signature="CriaConta()[pri:0, instance:br.com.rsinet.HUB_TDD.tests.TestCriaConta@1033576a]" name="CriaConta" duration-ms="6425" started-at="2020-01-16T22:09:13 GMT-03:00" finished-at="2020-01-16T22:09:20 GMT-03:00">
+        <test-method status="PASS" signature="PesquisaLupa()[pri:0, instance:br.com.rsinet.HUB_TDD.tests.TestPesquisaNaLupa@1e6d1014]" name="PesquisaLupa" duration-ms="1781" started-at="2020-01-17T12:42:45 GMT-03:00" finished-at="2020-01-17T12:42:46 GMT-03:00">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CriaConta -->
-        <test-method status="PASS" signature="url()[pri:0, instance:br.com.rsinet.HUB_TDD.tests.TestCriaConta@1033576a]" name="url" is-config="true" duration-ms="941" started-at="2020-01-16T22:09:20 GMT-03:00" finished-at="2020-01-16T22:09:21 GMT-03:00">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- url -->
-        <test-method status="PASS" signature="CriaContaFalha()[pri:1, instance:br.com.rsinet.HUB_TDD.tests.TestCriaConta@1033576a]" name="CriaContaFalha" duration-ms="4520" started-at="2020-01-16T22:09:21 GMT-03:00" finished-at="2020-01-16T22:09:25 GMT-03:00">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CriaContaFalha -->
-        <test-method status="PASS" signature="fechar()[pri:0, instance:br.com.rsinet.HUB_TDD.tests.TestCriaConta@1033576a]" name="fechar" is-config="true" duration-ms="622" started-at="2020-01-16T22:09:25 GMT-03:00" finished-at="2020-01-16T22:09:26 GMT-03:00">
+        </test-method> <!-- PesquisaLupa -->
+        <test-method status="PASS" signature="fechar()[pri:0, instance:br.com.rsinet.HUB_TDD.tests.TestPesquisaNaLupa@1e6d1014]" name="fechar" is-config="true" duration-ms="620" started-at="2020-01-17T12:42:46 GMT-03:00" finished-at="2020-01-17T12:42:47 GMT-03:00">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fechar -->
-      </class> <!-- br.com.rsinet.HUB_TDD.tests.TestCriaConta -->
+        <test-method status="PASS" signature="url()[pri:0, instance:br.com.rsinet.HUB_TDD.tests.TestPesquisaNaLupa@1e6d1014]" name="url" is-config="true" duration-ms="10147" started-at="2020-01-17T12:42:47 GMT-03:00" finished-at="2020-01-17T12:42:57 GMT-03:00">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- url -->
+        <test-method status="PASS" signature="PesqLupaNenhumProduto()[pri:1, instance:br.com.rsinet.HUB_TDD.tests.TestPesquisaNaLupa@1e6d1014]" name="PesqLupaNenhumProduto" duration-ms="719" started-at="2020-01-17T12:42:57 GMT-03:00" finished-at="2020-01-17T12:42:58 GMT-03:00">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PesqLupaNenhumProduto -->
+        <test-method status="PASS" signature="fechar()[pri:0, instance:br.com.rsinet.HUB_TDD.tests.TestPesquisaNaLupa@1e6d1014]" name="fechar" is-config="true" duration-ms="615" started-at="2020-01-17T12:42:58 GMT-03:00" finished-at="2020-01-17T12:42:59 GMT-03:00">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fechar -->
+      </class> <!-- br.com.rsinet.HUB_TDD.tests.TestPesquisaNaLupa -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,10 +1,7 @@
 package br.com.rsinet.HUB_TDD.Excel;
 
-public class CriarContaExcel {
-//	public String Excel() throws Exception {
-//
-//		return null;
-//	}
+public class MassaDeDadosNovaConta {
+
 
 	public String Usuario() throws Exception {
 		ExcelUtils.setExcelFile(Diretorio.Path_TestData + Diretorio.File_TestData, "Contas");

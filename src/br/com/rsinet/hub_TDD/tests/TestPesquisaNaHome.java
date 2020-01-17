@@ -1,77 +1,66 @@
 package br.com.rsinet.HUB_TDD.tests;
 
-
 import java.util.concurrent.TimeUnit;
-
-
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-
-import br.com.rsinet.HUB_TDD.Excel.Diretorio;
-import br.com.rsinet.HUB_TDD.Excel.ExcelUtils;
-import br.com.rsinet.HUB_TDD.PageFactory.PesquisaNaHome_Page;
+import br.com.rsinet.HUB_TDD.PageFactory.DriverFactory;
+import br.com.rsinet.HUB_TDD.PageFactory.Home_Page;
+import br.com.rsinet.HUB_TDD.PageFactory.Tablet_Page;
 import br.com.rsinet.HUB_TDD.ScreenShot.PrintDiretorio;
 import br.com.rsinet.HUB_TDD.ScreenShot.ScreenShot;
-
-
 
 public class TestPesquisaNaHome {
 
 	ExtentReports extent;
 	ExtentTest logger;
-	static ChromeDriver driver = new ChromeDriver();
-
+	//static ChromeDriver driver = new ChromeDriver();
+	private WebDriver driver;
 	@BeforeMethod
 	public void url() throws InterruptedException {
-		driver.get("https://www.advantageonlineshopping.com");
-		driver.manage().window().maximize();
-	
+
+		driver = DriverFactory.AbrirSite();
+
 	}
 
-	@Test(priority =0)
+	@Test(priority = 0)
 	public void PesquisaHome() throws Exception {
-		ExcelUtils.setExcelFile(Diretorio.Path_TestData + Diretorio.File_TestData, "BuscaHome");
-		PesquisaNaHome_Page pesq = PageFactory.initElements(driver, PesquisaNaHome_Page.class);
-		
-		pesq.tablet();
-			
-		//Esperar 5 segundos para achar um elemento que está na home para tirar a ScreenShot.
-			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);	
-			driver.findElement(By.partialLinkText(ExcelUtils.getCellData(0, 0))).click();
-	
+		Home_Page pesquisa = PageFactory.initElements(driver, Home_Page.class);
+		Tablet_Page tablets = PageFactory.initElements(driver, Tablet_Page.class);
+
+		pesquisa.tablet();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		tablets.Hp_Pro(driver);
+
 		ScreenShot.getScreenShots(PrintDiretorio.pesquisaHome, driver);
-		     Assert.assertEquals("https://www.advantageonlineshopping.com/#/product/18", driver.getCurrentUrl());
+		Assert.assertEquals("https://www.advantageonlineshopping.com/#/product/18", driver.getCurrentUrl());
 	}
-	
-	@Test(priority =1)
+
+	@Test(priority = 1)
 	public void PesquisaHomeFalha() throws Exception {
-		ExcelUtils.setExcelFile(Diretorio.Path_TestData + Diretorio.File_TestData, "BuscaHome");
-		PesquisaNaHome_Page pesq = PageFactory.initElements(driver, PesquisaNaHome_Page.class);
-		
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Home_Page pesq = PageFactory.initElements(driver, Home_Page.class);
+		Tablet_Page click = PageFactory.initElements(driver, Tablet_Page.class);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+
 		pesq.tablet();
-		
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);	
-		try {
-		driver.findElement(By.linkText(ExcelUtils.getCellData(0, 1))).click();
-		} catch(Exception e) {
-			
-			ScreenShot.getScreenShots(PrintDiretorio.pesquisaHome, driver);
-		}
-		Assert.assertEquals("https://www.advantageonlineshopping.com/#/category/Tablets/3", driver.getCurrentUrl());
+		click.tela(driver);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("18")));
+		click.Processador(driver);
+		Boolean semResultado = wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[3]/section/article/div[3]/div/div/div[3]/label/span"), "No results"));
+		Assert.assertTrue(semResultado);
+		ScreenShot.getScreenShots(PrintDiretorio.pesquisaHome, driver);
 	}
-	
-	@AfterTest
+
+	@AfterMethod
 	public void fechar() {
-		driver.close();
+		 DriverFactory.fecharChrome(driver);
 	}
 }

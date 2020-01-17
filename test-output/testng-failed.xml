@@ -8,7 +8,6 @@
           <include name="url"/>
           <include name="fechar"/>
           <include name="CriaConta"/>
-          <include name="CriaContaFalha"/>
         </methods>
       </class> <!-- br.com.rsinet.HUB_TDD.tests.TestCriaConta -->
     </classes>
