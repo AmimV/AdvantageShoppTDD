@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="br.com.rsinet.HUB_TDD.tests.TestCriaConta">
+      <class name="br.com.rsinet.HUB_TDD.tests.TestPesquisaNaHome">
         <methods>
-          <include name="url"/>
+          <include name="PesquisaHome"/>
           <include name="fechar"/>
-          <include name="CriaConta"/>
+          <include name="url"/>
         </methods>
-      </class> <!-- br.com.rsinet.HUB_TDD.tests.TestCriaConta -->
+      </class> <!-- br.com.rsinet.HUB_TDD.tests.TestPesquisaNaHome -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

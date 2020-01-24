@@ -2,34 +2,41 @@ package br.com.rsinet.HUB_TDD.tests;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-
 import br.com.rsinet.HUB_TDD.Excel.MassaDeDadosNovaConta;
 import br.com.rsinet.HUB_TDD.PageFactory.CriarConta_Page;
 import br.com.rsinet.HUB_TDD.PageFactory.DriverFactory;
 import br.com.rsinet.HUB_TDD.PageFactory.Home_Page;
-import br.com.rsinet.HUB_TDD.ScreenShot.PrintDiretorio;
-import br.com.rsinet.HUB_TDD.ScreenShot.ScreenShot;
+import br.com.rsinet.HUB_TDD.Reports.Report;
+
 
 public class TestCriaConta {
 	ExtentReports extent;
-	ExtentTest logger;
+	ExtentTest test;
 	private WebDriver driver;
 	private CriarConta_Page cc;
 	private Home_Page inicio;
 	MassaDeDadosNovaConta celula = new MassaDeDadosNovaConta();
 
 
+	@BeforeTest
+	public void test() {
+		extent = Report.setReport("CadastrarUsuario_report");
+		
+	}
+	
 	@BeforeMethod
 	public void url() throws InterruptedException {
 		driver = DriverFactory.AbrirSite();
@@ -39,6 +46,7 @@ public class TestCriaConta {
 
 	@Test(priority = 0)
 	public void CriaConta() throws Exception {
+		test = Report.createTest("CadastrandoUmUsuario");
 		
 		inicio.Register();
 		inicio.ClicarEmRegister(driver);
@@ -49,17 +57,18 @@ public class TestCriaConta {
 		cc.PrimeiroNome();
 		cc.UltimoNome();
 		cc.Telefone();
-		cc.Pais();
+		cc.Pais(driver);
 		cc.Cidade();
 		cc.Endereco();
 		cc.Estado();
 		cc.Cep();
-		cc.Aceitar();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript ("window.scrollBy (0,100)");
+		cc.Aceitar(driver);
 		cc.botao();
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 	Boolean element = wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/header/nav/ul/li[3]/a/span"), celula.Usuario()));
-		ScreenShot.getScreenShots(PrintDiretorio.criaConta, driver);
 		Assert.assertTrue(element);
 	
 	}
@@ -68,6 +77,7 @@ public class TestCriaConta {
 
 	public void CriaContaFalha() throws Exception {
 		
+		test = Report.createTest("CadastrandoUmUsuarioComFalha");
 		inicio.Register();
 		inicio.ClicarEmRegister(driver);
 		cc.Usuario();
@@ -77,26 +87,26 @@ public class TestCriaConta {
 		cc.PrimeiroNome();
 		cc.UltimoNome();
 		cc.Telefone();
-		cc.Pais();
+		cc.Pais(driver);
 		cc.Cidade();
 		cc.Endereco();
 		cc.Estado();
 		cc.Cep();
-		cc.Aceitar();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript ("window.scrollBy (0,100)");
+		cc.Aceitar(driver);
 		cc.botao();
-
 		
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 	Boolean element = wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[3]/section/article/sec-form/div[2]/label[1]"), "User name already exists"));
 	System.out.println(element);
-		//Atrasar SS depois.
-		ScreenShot.getScreenShots(PrintDiretorio.criaConta, driver);
 
 	}
 
 	@AfterMethod
-	public void fechar() throws Exception {
-
+	public void fechar(ITestResult result) throws Exception {
+		Report.statusReported(test, result, driver);
+		Report.quitExtent(extent);
 	 DriverFactory.fecharChrome(driver);
 	}
 }

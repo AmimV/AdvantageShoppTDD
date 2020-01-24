@@ -2,6 +2,7 @@ package br.com.rsinet.HUB_TDD.PageFactory;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,8 +36,11 @@ public class PesquisaNaLupa_Page {
 		busca.sendKeys(celula.PesquisaProduto01(), Keys.ENTER);
 	}
 	
-	public void BuscaProdutoInexistente() throws Exception {
+	public void BuscaProdutoInexistente(WebDriver driver) throws Exception {
 		busca.sendKeys(celula.ProdutoInvalido(), Keys.ENTER);
+		JavascriptExecutor js;
+		js = (JavascriptExecutor) driver;
+		js.executeAsyncScript("window.setTimeout(arguments[arguments.length - 1], 1000)");
 	}
 
 	public void FechaLupa() {

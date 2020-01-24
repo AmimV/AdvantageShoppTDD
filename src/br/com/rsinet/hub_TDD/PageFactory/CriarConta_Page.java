@@ -2,9 +2,15 @@ package br.com.rsinet.HUB_TDD.PageFactory;
 
 
 import br.com.rsinet.HUB_TDD.Excel.MassaDeDadosNovaConta;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.Select;
 
 
 public class CriarConta_Page {
@@ -83,8 +89,9 @@ public class CriarConta_Page {
 		telefone.sendKeys(celula.Telefone());
 	}
 
-	public void Pais() throws Exception {
-		pais.sendKeys(celula.Pais());
+	public void Pais(WebDriver driver) throws Exception {
+		Select country = new Select(driver.findElement(By.name("countryListboxRegisterPage")));
+		country.selectByVisibleText(celula.Pais());
 	}
 
 	public void Cidade() throws Exception {
@@ -103,7 +110,8 @@ public class CriarConta_Page {
 		cep.sendKeys(celula.Cep());
 	}
 
-	public void Aceitar() {
+	public void Aceitar(WebDriver driver) {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		aceitar.click();
 	}
 

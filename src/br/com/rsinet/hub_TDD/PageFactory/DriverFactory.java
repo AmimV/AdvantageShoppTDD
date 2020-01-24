@@ -22,12 +22,4 @@ public class DriverFactory {
 		if (driver != null)
 			driver.quit();
 	}
-	
-//	public static WebDriver getDriver() {
-//		if(driver!=null) {
-//			return driver;
-//		}
-//		AbrirSite();
-//		return driver;
-//	}
 }
