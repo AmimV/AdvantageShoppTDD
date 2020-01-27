@@ -1,49 +1,23 @@
 package br.com.rsinet.hub_TDD.Reports;
 
 import java.io.IOException;
-
-
-
 import org.openqa.selenium.WebDriver;
-
 import org.testng.ITestResult;
-
-
-
 import com.aventstack.extentreports.ExtentReports;
-
 import com.aventstack.extentreports.ExtentTest;
-
 import com.aventstack.extentreports.Status;
-
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-
 import com.aventstack.extentreports.reporter.configuration.Theme;
-
 import br.com.rsinet.hub_TDD.ScreenShot.ScreenShot;
-import ru.yandex.qatools.ashot.Screenshot;
-
-
 
 public class Report {
 
-
-
 	public static ExtentHtmlReporter htmlReporter;
-
 	public static ExtentReports extent;
-
 	public static ExtentTest test;
-
-
-
-	/*metodo de configuranções nescessarias para manipular dados via excel*/
-
 	public static ExtentReports setReport(String nomeReport) {
 
-		htmlReporter = new ExtentHtmlReporter("target/reportRelatorio/"+nomeReport+".html");
-		//System.getProperty("user.dir") +
-
+		htmlReporter = new ExtentHtmlReporter("target/" + nomeReport + ".html");
 
 		htmlReporter.config().setDocumentTitle("Automation Report");
 
@@ -51,13 +25,11 @@ public class Report {
 
 		htmlReporter.config().setTheme(Theme.DARK);
 
-
-
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 		extent.setSystemInfo("HostName", "LocalHost");
 		extent.setSystemInfo("OS", "Windows");
-		extent.setSystemInfo("Tester Name", "Johnata Dias");
+		extent.setSystemInfo("Tester Name", "Matheus Amim");
 		extent.setSystemInfo("Browser", "Chrome");
 
 		return extent;
@@ -72,14 +44,12 @@ public class Report {
 
 	}
 
-
 	public static void statusReported(ExtentTest test, ITestResult result, WebDriver driver) throws IOException {
-
 
 		String screenPath = ScreenShot.gerarScreenShot(driver, result.getName());
 
 		if (result.getStatus() == ITestResult.FAILURE) {
-			
+
 			test.log(Status.FAIL, "Caso de teste FAILED: " + result.getName());
 			test.log(Status.FAIL, "Caso de teste FAILED: " + result.getThrowable());
 			test.addScreenCaptureFromPath(screenPath);
@@ -99,10 +69,6 @@ public class Report {
 		}
 
 	}
-
-
-
-	/*fechando*/
 
 	public static void quitExtent(ExtentReports extent) {
 

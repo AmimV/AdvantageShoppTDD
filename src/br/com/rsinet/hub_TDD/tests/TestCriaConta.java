@@ -99,8 +99,7 @@ public class TestCriaConta {
 		
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 	Boolean element = wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[3]/section/article/sec-form/div[2]/label[1]"), "User name already exists"));
-	System.out.println(element);
-
+	Assert.assertTrue(element);
 	}
 
 	@AfterMethod

@@ -14,7 +14,7 @@ public class MassaDeDadosPesqLupa {
 	}
 	
 	public String ProdutoInvalido() throws Exception {
-		String produtoInvalido = ExcelUtils.getCellData(0, 1);
+		String produtoInvalido = ExcelUtils.getCellData(0, 2);
 		return produtoInvalido;
 	}
 }

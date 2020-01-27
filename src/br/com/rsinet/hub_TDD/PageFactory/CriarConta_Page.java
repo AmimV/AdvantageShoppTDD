@@ -2,9 +2,6 @@ package br.com.rsinet.hub_TDD.PageFactory;
 
 
 import br.com.rsinet.hub_TDD.Excel.MassaDeDadosNovaConta;
-
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -60,9 +57,6 @@ public class CriarConta_Page {
 	private WebElement pais;
 
 	public void Usuario() throws Exception {
-
-		//PageFactory.initElements(driver, CriarConta_Page.class);
-
 		userName.sendKeys(celula.Usuario());
 	}
 
