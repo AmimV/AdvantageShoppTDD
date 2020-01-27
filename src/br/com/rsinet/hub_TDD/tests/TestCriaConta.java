@@ -1,4 +1,4 @@
-package br.com.rsinet.HUB_TDD.tests;
+package br.com.rsinet.hub_TDD.tests;
 
 
 import org.openqa.selenium.By;
@@ -15,11 +15,11 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import br.com.rsinet.HUB_TDD.Excel.MassaDeDadosNovaConta;
-import br.com.rsinet.HUB_TDD.PageFactory.CriarConta_Page;
-import br.com.rsinet.HUB_TDD.PageFactory.DriverFactory;
-import br.com.rsinet.HUB_TDD.PageFactory.Home_Page;
-import br.com.rsinet.HUB_TDD.Reports.Report;
+import br.com.rsinet.hub_TDD.Excel.MassaDeDadosNovaConta;
+import br.com.rsinet.hub_TDD.PageFactory.CriarConta_Page;
+import br.com.rsinet.hub_TDD.PageFactory.DriverFactory;
+import br.com.rsinet.hub_TDD.PageFactory.Home_Page;
+import br.com.rsinet.hub_TDD.Reports.Report;
 
 
 public class TestCriaConta {

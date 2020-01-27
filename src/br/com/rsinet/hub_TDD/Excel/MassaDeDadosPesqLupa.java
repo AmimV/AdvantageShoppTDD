@@ -1,4 +1,4 @@
-package br.com.rsinet.HUB_TDD.Excel;
+package br.com.rsinet.hub_TDD.Excel;
 
 public class MassaDeDadosPesqLupa {
 

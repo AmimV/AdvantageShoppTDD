@@ -1,4 +1,4 @@
-package br.com.rsinet.HUB_TDD.PageFactory;
+package br.com.rsinet.hub_TDD.PageFactory;
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import br.com.rsinet.HUB_TDD.Excel.MassaDeDadosPesqHome;
+import br.com.rsinet.hub_TDD.Excel.MassaDeDadosPesqHome;
 
 public class Tablet_Page {
 	MassaDeDadosPesqHome celula = new MassaDeDadosPesqHome();
@@ -29,6 +29,7 @@ public class Tablet_Page {
 	
 	public void Hp_Pro(WebDriver driver) throws Exception {
 		driver.findElement(By.partialLinkText(celula.HP_Pro())).click();
+
 	}
 	
 	public void tela (WebDriver driver) {

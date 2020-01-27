@@ -1,4 +1,4 @@
-package br.com.rsinet.HUB_TDD.ScreenShot;
+package br.com.rsinet.hub_TDD.ScreenShot;
 
 public class PrintDiretorio {
 

@@ -1,4 +1,4 @@
-package br.com.rsinet.HUB_TDD.tests;
+package br.com.rsinet.hub_TDD.tests;
 
 
 import java.io.IOException;
@@ -18,11 +18,10 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
-import br.com.rsinet.HUB_TDD.PageFactory.DriverFactory;
-import br.com.rsinet.HUB_TDD.PageFactory.PesquisaNaLupa_Page;
-import br.com.rsinet.HUB_TDD.Reports.Report;
-import br.com.rsinet.HUB_TDD.ScreenShot.PrintDiretorio;
-import br.com.rsinet.HUB_TDD.ScreenShot.ScreenShot;
+import br.com.rsinet.hub_TDD.PageFactory.DriverFactory;
+import br.com.rsinet.hub_TDD.PageFactory.PesquisaNaLupa_Page;
+import br.com.rsinet.hub_TDD.Reports.Report;
+
 
 public class TestPesquisaNaLupa {
 	private WebDriver driver;

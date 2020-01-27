@@ -1,4 +1,4 @@
-package br.com.rsinet.HUB_TDD.Reports;
+package br.com.rsinet.hub_TDD.Reports;
 
 import java.io.IOException;
 
@@ -20,7 +20,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import br.com.rsinet.HUB_TDD.ScreenShot.ScreenShot;
+import br.com.rsinet.hub_TDD.ScreenShot.ScreenShot;
 import ru.yandex.qatools.ashot.Screenshot;
 
 
@@ -41,8 +41,8 @@ public class Report {
 
 	public static ExtentReports setReport(String nomeReport) {
 
-		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/target/reportRelatorio/"+nomeReport+".html");
-
+		htmlReporter = new ExtentHtmlReporter("target/reportRelatorio/"+nomeReport+".html");
+		//System.getProperty("user.dir") +
 
 
 		htmlReporter.config().setDocumentTitle("Automation Report");

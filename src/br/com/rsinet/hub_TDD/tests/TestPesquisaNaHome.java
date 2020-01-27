@@ -1,4 +1,4 @@
-package br.com.rsinet.HUB_TDD.tests;
+package br.com.rsinet.hub_TDD.tests;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -15,10 +15,10 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import br.com.rsinet.HUB_TDD.PageFactory.DriverFactory;
-import br.com.rsinet.HUB_TDD.PageFactory.Home_Page;
-import br.com.rsinet.HUB_TDD.PageFactory.Tablet_Page;
-import br.com.rsinet.HUB_TDD.Reports.Report;
+import br.com.rsinet.hub_TDD.PageFactory.DriverFactory;
+import br.com.rsinet.hub_TDD.PageFactory.Home_Page;
+import br.com.rsinet.hub_TDD.PageFactory.Tablet_Page;
+import br.com.rsinet.hub_TDD.Reports.Report;
 
 public class TestPesquisaNaHome {
 
@@ -47,8 +47,12 @@ public class TestPesquisaNaHome {
 		pesquisa.tablet();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		tablets.Hp_Pro(driver);
+		
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		Boolean semResultado = wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[3]/section/article[1]/div[2]/div[2]/h1"), "HP PRO TABLET"));
+		Assert.assertTrue(semResultado);
+	
 
-		Assert.assertTrue(driver.getPageSource().contains("HP Pro"));
 	}
 
 	@Test(priority = 1)

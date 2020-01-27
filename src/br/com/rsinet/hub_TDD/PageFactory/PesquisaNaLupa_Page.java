@@ -1,4 +1,4 @@
-package br.com.rsinet.HUB_TDD.PageFactory;
+package br.com.rsinet.hub_TDD.PageFactory;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
@@ -8,9 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import br.com.rsinet.HUB_TDD.Excel.Diretorio;
-import br.com.rsinet.HUB_TDD.Excel.ExcelUtils;
-import br.com.rsinet.HUB_TDD.Excel.MassaDeDadosPesqLupa;
+
+import br.com.rsinet.hub_TDD.Excel.MassaDeDadosPesqLupa;
 
 public class PesquisaNaLupa_Page {
 	MassaDeDadosPesqLupa celula = new MassaDeDadosPesqLupa();

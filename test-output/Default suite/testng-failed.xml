@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="br.com.rsinet.HUB_TDD.tests.TestPesquisaNaHome">
+      <class name="br.com.rsinet.hub_TDD.tests.TestPesquisaNaHome">
         <methods>
+          <include name="url"/>
+          <include name="report"/>
           <include name="PesquisaHome"/>
           <include name="fechar"/>
-          <include name="url"/>
         </methods>
-      </class> <!-- br.com.rsinet.HUB_TDD.tests.TestPesquisaNaHome -->
+      </class> <!-- br.com.rsinet.hub_TDD.tests.TestPesquisaNaHome -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
