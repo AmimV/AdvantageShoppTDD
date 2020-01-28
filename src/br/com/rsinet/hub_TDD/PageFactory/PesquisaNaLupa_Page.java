@@ -22,16 +22,16 @@ public class PesquisaNaLupa_Page {
 	MassaDeDadosPesqLupa celula = new MassaDeDadosPesqLupa();
 
 	@FindBy(how = How.ID, using = "menuSearch")
-	public WebElement lupa;
+	private WebElement lupa;
 
 	@FindBy(how = How.ID, using = "autoComplete")
-	public WebElement busca;
+	private WebElement busca;
 
 	@FindBy(how = How.XPATH, using = "/html/body/header/nav/ul/li[4]/a/div/div[1]/div/div/div/img")
-	public WebElement buscafecha;
+	private WebElement buscafecha;
 
 	@FindBy(how = How.XPATH, using = "/html/body/div[3]/section/article/div[3]/div/label/span")
-	public WebElement SemResultado;
+	private WebElement SemResultado;
 
 	public void ClicarLupa() {
 

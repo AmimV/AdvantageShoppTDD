@@ -1,7 +1,6 @@
 package br.com.rsinet.hub_TDD.tests;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -25,6 +24,8 @@ public class TestPesquisaNaHome {
 	ExtentReports extent;
 	ExtentTest test;
 	private WebDriver driver;
+	private Tablet_Page tablet;
+	private Home_Page home;
 
 	@BeforeTest
 	public void report() {
@@ -35,20 +36,20 @@ public class TestPesquisaNaHome {
 	@BeforeMethod
 	public void url() throws InterruptedException {
 		driver = DriverFactory.AbrirSite();
+		home = PageFactory.initElements(driver, Home_Page.class);
+		tablet = PageFactory.initElements(driver, Tablet_Page.class);
 
 	}
 
 	@Test(priority = 0)
 	public void PesquisaHome() throws Exception {
-		Home_Page pesquisa = PageFactory.initElements(driver, Home_Page.class);
-		Tablet_Page tablets = PageFactory.initElements(driver, Tablet_Page.class);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		test = Report.createTest("PesquisarProdutoNaHome");
 
-		pesquisa.tablet();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		tablets.Hp_Pro(driver);
+		home.tablet();
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		tablet.Hp_Pro();
 		
-		WebDriverWait wait = new WebDriverWait(driver, 10);
 		Boolean semResultado = wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[3]/section/article[1]/div[2]/div[2]/h1"), "HP PRO TABLET"));
 		Assert.assertTrue(semResultado);
 	
@@ -57,15 +58,13 @@ public class TestPesquisaNaHome {
 
 	@Test(priority = 1)
 	public void PesquisaHomeFalha() throws Exception {
-
-		Home_Page pesq = PageFactory.initElements(driver, Home_Page.class);
-		Tablet_Page click = PageFactory.initElements(driver, Tablet_Page.class);
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		test = Report.createTest("PesquisarProdutoNaHomeFalha");
 
-		pesq.tablet();
-		click.tela(driver);
-		click.Processador(driver);
+		home.tablet();
+		tablet.tela();
+		tablet.Processador();
+		
 		Boolean semResultado = wait.until(ExpectedConditions.textToBePresentInElementLocated(
 				By.xpath("/html/body/div[3]/section/article/div[3]/div/div/div[3]/label/span"), "No results"));
 		Assert.assertTrue(semResultado);

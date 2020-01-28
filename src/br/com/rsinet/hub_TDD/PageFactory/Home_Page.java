@@ -8,8 +8,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class Home_Page {
+	private WebDriver driver;
+	
+	public Home_Page(WebDriver driver) {
+		this.driver = driver;
+	}
 	@FindBy(how = How.ID, using = "menuUser")
-	public WebElement Menu;
+	private WebElement Menu;
 
 	@FindBy(how = How.ID, using = "tabletsTxt")
 	private WebElement tablets;
@@ -18,7 +23,7 @@ public class Home_Page {
 		Menu.click();
 	}
 
-	public void ClicarEmRegister(WebDriver driver) {
+	public void ClicarEmRegister() {
 		WebElement element = driver.findElement(By.xpath("/html/body/login-modal/div/div/div[3]/a[2]"));
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", element);

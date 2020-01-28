@@ -2,7 +2,6 @@ package br.com.rsinet.hub_TDD.tests;
 
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -49,7 +48,7 @@ public class TestCriaConta {
 		test = Report.createTest("CadastrandoUmUsuario");
 		
 		inicio.Register();
-		inicio.ClicarEmRegister(driver);
+		inicio.ClicarEmRegister();
 		cc.Usuario();
 		cc.email();
 		cc.senha();
@@ -57,14 +56,12 @@ public class TestCriaConta {
 		cc.PrimeiroNome();
 		cc.UltimoNome();
 		cc.Telefone();
-		cc.Pais(driver);
+		cc.Pais();
 		cc.Cidade();
 		cc.Endereco();
 		cc.Estado();
 		cc.Cep();
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript ("window.scrollBy (0,100)");
-		cc.Aceitar(driver);
+		cc.Aceitar();
 		cc.botao();
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -79,7 +76,7 @@ public class TestCriaConta {
 		
 		test = Report.createTest("CadastrandoUmUsuarioComFalha");
 		inicio.Register();
-		inicio.ClicarEmRegister(driver);
+		inicio.ClicarEmRegister();
 		cc.Usuario();
 		cc.email();
 		cc.senha();
@@ -87,14 +84,12 @@ public class TestCriaConta {
 		cc.PrimeiroNome();
 		cc.UltimoNome();
 		cc.Telefone();
-		cc.Pais(driver);
+		cc.Pais();
 		cc.Cidade();
 		cc.Endereco();
 		cc.Estado();
 		cc.Cep();
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript ("window.scrollBy (0,100)");
-		cc.Aceitar(driver);
+		cc.Aceitar();
 		cc.botao();
 		
 		WebDriverWait wait = new WebDriverWait(driver, 10);

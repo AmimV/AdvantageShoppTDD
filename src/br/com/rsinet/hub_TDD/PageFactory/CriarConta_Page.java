@@ -12,7 +12,12 @@ import org.openqa.selenium.support.ui.Select;
 
 
 public class CriarConta_Page {
+	private WebDriver driver;
 	MassaDeDadosNovaConta celula = new MassaDeDadosNovaConta();
+	
+	public CriarConta_Page(WebDriver driver) {
+		this.driver = driver;
+	}
 
 	@FindBy(how = How.NAME, using = "usernameRegisterPage")
 	private WebElement userName;
@@ -84,7 +89,7 @@ public class CriarConta_Page {
 		telefone.sendKeys(celula.Telefone());
 	}
 
-	public void Pais(WebDriver driver) throws Exception {
+	public void Pais() throws Exception {
 		Select country = new Select(driver.findElement(By.name("countryListboxRegisterPage")));
 		country.selectByVisibleText(celula.Pais());
 	}
@@ -105,9 +110,9 @@ public class CriarConta_Page {
 		cep.sendKeys(celula.Cep());
 	}
 
-	public void Aceitar(WebDriver driver) {
+	public void Aceitar() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript ("window.scrollBy (0,100)");
+		js.executeScript ("window.scrollBy (0,200)");
 		aceitar.click();
 	}
 

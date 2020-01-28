@@ -21,9 +21,9 @@ import br.com.rsinet.hub_TDD.Reports.Report;
 
 public class TestPesquisaNaLupa {
 	private WebDriver driver;
+	private PesquisaNaLupa_Page pesq;
 	ExtentReports extent;
 	ExtentTest test;
-	PesquisaNaLupa_Page pesq;
 
 	@BeforeTest
 	public void report() {

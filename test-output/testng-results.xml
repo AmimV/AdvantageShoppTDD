@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-01-27T15:37:14 GMT-03:00" name="Default suite" finished-at="2020-01-27T15:37:48 GMT-03:00" duration-ms="34320">
+  <suite name="Default suite" duration-ms="26861" started-at="2020-01-28T09:12:49 GMT-03:00" finished-at="2020-01-28T09:13:15 GMT-03:00">
     <groups>
     </groups>
-    <test started-at="2020-01-27T15:37:14 GMT-03:00" name="Default test" finished-at="2020-01-27T15:37:48 GMT-03:00" duration-ms="34320">
-      <class name="br.com.rsinet.hub_TDD.tests.TestCriaConta">
-        <test-method is-config="true" signature="test()[pri:0, instance:br.com.rsinet.hub_TDD.tests.TestCriaConta@15b204a1]" started-at="2020-01-27T15:37:14 GMT-03:00" name="test" finished-at="2020-01-27T15:37:14 GMT-03:00" duration-ms="93" status="PASS">
+    <test name="Default test" duration-ms="26861" started-at="2020-01-28T09:12:49 GMT-03:00" finished-at="2020-01-28T09:13:15 GMT-03:00">
+      <class name="br.com.rsinet.hub_TDD.tests.TestPesquisaNaLupa">
+        <test-method status="PASS" signature="report()[pri:0, instance:br.com.rsinet.hub_TDD.tests.TestPesquisaNaLupa@76707e36]" name="report" is-config="true" duration-ms="76" started-at="2020-01-28T09:12:49 GMT-03:00" finished-at="2020-01-28T09:12:49 GMT-03:00">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
-        <test-method is-config="true" signature="url()[pri:0, instance:br.com.rsinet.hub_TDD.tests.TestCriaConta@15b204a1]" started-at="2020-01-27T15:37:14 GMT-03:00" name="url" finished-at="2020-01-27T15:37:24 GMT-03:00" duration-ms="10625" status="PASS">
+        </test-method> <!-- report -->
+        <test-method status="PASS" signature="url()[pri:0, instance:br.com.rsinet.hub_TDD.tests.TestPesquisaNaLupa@76707e36]" name="url" is-config="true" duration-ms="11082" started-at="2020-01-28T09:12:49 GMT-03:00" finished-at="2020-01-28T09:13:00 GMT-03:00">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- url -->
-        <test-method signature="CriaConta()[pri:0, instance:br.com.rsinet.hub_TDD.tests.TestCriaConta@15b204a1]" started-at="2020-01-27T15:37:24 GMT-03:00" name="CriaConta" finished-at="2020-01-27T15:37:30 GMT-03:00" duration-ms="5151" status="PASS">
+        <test-method status="PASS" signature="PesquisaLupa()[pri:0, instance:br.com.rsinet.hub_TDD.tests.TestPesquisaNaLupa@76707e36]" name="PesquisaLupa" duration-ms="1725" started-at="2020-01-28T09:13:00 GMT-03:00" finished-at="2020-01-28T09:13:02 GMT-03:00">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CriaConta -->
-        <test-method is-config="true" signature="fechar(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub_TDD.tests.TestCriaConta@15b204a1]" started-at="2020-01-27T15:37:30 GMT-03:00" name="fechar" finished-at="2020-01-27T15:37:32 GMT-03:00" duration-ms="1959" status="PASS">
+        </test-method> <!-- PesquisaLupa -->
+        <test-method status="PASS" signature="fechar(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub_TDD.tests.TestPesquisaNaLupa@76707e36]" name="fechar" is-config="true" duration-ms="1231" started-at="2020-01-28T09:13:02 GMT-03:00" finished-at="2020-01-28T09:13:03 GMT-03:00">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CriaConta status=SUCCESS method=TestCriaConta.CriaConta()[pri:0, instance:br.com.rsinet.hub_TDD.tests.TestCriaConta@15b204a1] output={null}]]]>
+                <![CDATA[[TestResult name=PesquisaLupa status=SUCCESS method=TestPesquisaNaLupa.PesquisaLupa()[pri:0, instance:br.com.rsinet.hub_TDD.tests.TestPesquisaNaLupa@76707e36] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fechar -->
-        <test-method is-config="true" signature="url()[pri:0, instance:br.com.rsinet.hub_TDD.tests.TestCriaConta@15b204a1]" started-at="2020-01-27T15:37:32 GMT-03:00" name="url" finished-at="2020-01-27T15:37:42 GMT-03:00" duration-ms="10173" status="PASS">
+        <test-method status="PASS" signature="url()[pri:0, instance:br.com.rsinet.hub_TDD.tests.TestPesquisaNaLupa@76707e36]" name="url" is-config="true" duration-ms="10319" started-at="2020-01-28T09:13:03 GMT-03:00" finished-at="2020-01-28T09:13:13 GMT-03:00">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- url -->
-        <test-method signature="CriaContaFalha()[pri:1, instance:br.com.rsinet.hub_TDD.tests.TestCriaConta@15b204a1]" started-at="2020-01-27T15:37:42 GMT-03:00" name="CriaContaFalha" finished-at="2020-01-27T15:37:47 GMT-03:00" duration-ms="5184" status="PASS">
+        <test-method status="PASS" signature="PesqLupaNenhumProduto()[pri:1, instance:br.com.rsinet.hub_TDD.tests.TestPesquisaNaLupa@76707e36]" name="PesqLupaNenhumProduto" duration-ms="1328" started-at="2020-01-28T09:13:13 GMT-03:00" finished-at="2020-01-28T09:13:14 GMT-03:00">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CriaContaFalha -->
-        <test-method is-config="true" signature="fechar(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub_TDD.tests.TestCriaConta@15b204a1]" started-at="2020-01-27T15:37:47 GMT-03:00" name="fechar" finished-at="2020-01-27T15:37:48 GMT-03:00" duration-ms="1102" status="PASS">
+        </test-method> <!-- PesqLupaNenhumProduto -->
+        <test-method status="PASS" signature="fechar(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub_TDD.tests.TestPesquisaNaLupa@76707e36]" name="fechar" is-config="true" duration-ms="1074" started-at="2020-01-28T09:13:14 GMT-03:00" finished-at="2020-01-28T09:13:15 GMT-03:00">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CriaContaFalha status=SUCCESS method=TestCriaConta.CriaContaFalha()[pri:1, instance:br.com.rsinet.hub_TDD.tests.TestCriaConta@15b204a1] output={null}]]]>
+                <![CDATA[[TestResult name=PesqLupaNenhumProduto status=SUCCESS method=TestPesquisaNaLupa.PesqLupaNenhumProduto()[pri:1, instance:br.com.rsinet.hub_TDD.tests.TestPesquisaNaLupa@76707e36] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fechar -->
-      </class> <!-- br.com.rsinet.hub_TDD.tests.TestCriaConta -->
+      </class> <!-- br.com.rsinet.hub_TDD.tests.TestPesquisaNaLupa -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
