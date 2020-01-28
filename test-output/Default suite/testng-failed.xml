@@ -5,7 +5,7 @@
     <classes>
       <class name="br.com.rsinet.hub_TDD.tests.TestPesquisaNaLupa">
         <methods>
-          <include name="PesqLupaNenhumProduto"/>
+          <include name="PesquisaLupa"/>
           <include name="url"/>
           <include name="fechar"/>
           <include name="report"/>
